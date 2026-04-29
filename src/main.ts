@@ -24,13 +24,13 @@ export default class DesktopNotePlugin extends Plugin {
     })
     const result = load({
       library: 'setBottom',
-      funcName: 'test',
+      funcName: 'main',
       retType: DataType.I32,
-      paramsType: [],
-      paramsValue: [],
+      paramsType: [DataType.I32],
+      paramsValue: [hwnd],
       freeResultMemory: false
     })
-    console.log(result, hwnd)
+    console.log(result)
     close('setBottom')
   }
 
