@@ -3,6 +3,9 @@ import { openDesktopWindow } from 'feature/desktop'
 
 export default class DesktopNotePlugin extends Plugin {
   async onload() {
+    const hwnd = await openDesktopWindow()
+    if (hwnd === undefined) return
+
     // 获取当前插件的绝对路径
     const myId = this.manifest.id
     const myPlugin = (this.app as any).plugins.plugins[myId]
@@ -27,9 +30,8 @@ export default class DesktopNotePlugin extends Plugin {
       paramsValue: [],
       freeResultMemory: false
     })
-    console.log(result)
+    console.log(result, hwnd)
     close('setBottom')
-    await openDesktopWindow()
   }
 
   onunload() {
