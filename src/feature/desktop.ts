@@ -1,5 +1,5 @@
 import { Platform, Notice } from 'obsidian'
-import { app } from './shared/global'
+import { app } from '../shared/global'
 
 export const openDesktopWindow = async (): Promise<void> => {
   if (!Platform.isWin) {
