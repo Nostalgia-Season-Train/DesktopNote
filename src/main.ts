@@ -1,5 +1,5 @@
 import { Plugin } from 'obsidian'
-import { openDesktopWindow } from './feature/desktop'
+import { openDesktopWindow } from 'feature/desktop'
 
 export default class DesktopNotePlugin extends Plugin {
   async onload() {
